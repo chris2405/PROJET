@@ -8,11 +8,11 @@ import java.sql.Statement;
 public class MainProjet {
 
 	public static void main(String[] args) {
-	//Connect();
+	Connect();
 	
-	Fenetre fen=new Fenetre();
+	//Fenetre fen=new Fenetre();
 	
-	
+	System.out.println();
 
 	}
 
@@ -32,7 +32,7 @@ public class MainProjet {
 
 		      String user = "postgres";
 
-		      String passwd = "postgres";
+		      String passwd = "24261305";
 
 
 		      Connection conn = DriverManager.getConnection(url, user, passwd);
@@ -44,7 +44,7 @@ public class MainProjet {
 
 		      //L'objet ResultSet contient le résultat de la requête SQL
 
-		      ResultSet result = state.executeQuery("SELECT * FROM SALLE ");
+		      ResultSet result = state.executeQuery("SELECT * FROM FORMATEUR ");
 
 		      //On récupère les MetaData
 

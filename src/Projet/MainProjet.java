@@ -1,31 +1,39 @@
 package Projet;
+import java.io.Console;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import java.util.Scanner;
+
+import javax.swing.JDialog;
+
+
 
 public class MainProjet {
 
 	public static void main(String[] args) {
 	Connect();
 	
-	//Fenetre fen=new Fenetre();
+	 
+	Fenetre fen=new Fenetre();
 	
-	System.out.println();
+	//DatePlannnig date=new DatePlannnig(20,04,2017);
+	//System.out.println(date);
+	
+	
+	//System.out.println();
+	
+	
 
 	}
 
 	
-	
-	
-	
 	public static void Connect(){
 		try {
 
-		   Class.forName("org.postgresql.Driver");
-
-		      System.out.println("Driver O.K.");
+		   
 
 
 		      String url = "jdbc:postgresql://localhost:5432/campus";
@@ -44,7 +52,7 @@ public class MainProjet {
 
 		      //L'objet ResultSet contient le résultat de la requête SQL
 
-		      ResultSet result = state.executeQuery("SELECT * FROM FORMATEUR ");
+		      ResultSet result = state.executeQuery("SELECT * FROM DATE ");
 
 		      //On récupère les MetaData
 
@@ -87,6 +95,13 @@ public class MainProjet {
 
 		    }      
 		
-		  }
+	}
 
+	public static void affiche(){
+		
+		
+		
+	}
+	
 }
+		

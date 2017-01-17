@@ -10,6 +10,8 @@ import javax.swing.JButton;
 
 public class MonBouton extends JButton implements MouseListener,ActionListener {
 	
+	 JButton bt = new JButton("");
+	
 	public MonBouton(String label){
 		super(label);
 		

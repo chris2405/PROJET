@@ -1,5 +1,6 @@
 package Projet;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,12 +31,13 @@ public class MonBouton extends JButton implements MouseListener,ActionListener {
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		this.setBackground(Color.GREEN);
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
+		this.setBackground(bt.getBackground());
 		
 	}
 

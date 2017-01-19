@@ -1,5 +1,5 @@
 package Projet;
-
+/*
 public class Administrateur extends Responsable{
 	
 	public Administrateur(){
@@ -18,3 +18,4 @@ public class Administrateur extends Responsable{
 	}
 	
 }
+*/

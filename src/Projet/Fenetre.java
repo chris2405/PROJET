@@ -55,6 +55,7 @@ public class Fenetre extends JFrame implements MouseListener,ActionListener{
 	
 	MonBouton creer= new MonBouton("creer");
 	MonBouton modif= new MonBouton("modifier");
+	MonBouton supp= new MonBouton("supprimer");
 	
 	JLabel l1 = new JLabel("jour");
 	JLabel l2 = new JLabel("mois");
@@ -118,7 +119,7 @@ public class Fenetre extends JFrame implements MouseListener,ActionListener{
 		
 		
 		b4.setVisible(false);
-		
+		/*
 		MonBouton b5=new MonBouton("Consulter planning General");
 		MonBouton b6=new MonBouton("Consulter le planning Personnel");
 		MonBouton b7=new MonBouton("Créer Planning");
@@ -126,7 +127,7 @@ public class Fenetre extends JFrame implements MouseListener,ActionListener{
 		MonBouton b8=new MonBouton("Consulter planning General");
 		MonBouton b9=new MonBouton("Consulter le planning Personnel");
 		
-
+         */
 
 		/*
         String login=JOptionPane.showInputDialog (pan1, "Tapez votre login");
@@ -149,7 +150,7 @@ public class Fenetre extends JFrame implements MouseListener,ActionListener{
 		pan1.add(b4);
 		
 
-		
+		/*
 		//PAN 2  RESPONSABLE
 		GridLayout gr2= new GridLayout(3,1);
 		pan2.setBackground(Color.WHITE);
@@ -172,12 +173,12 @@ public class Fenetre extends JFrame implements MouseListener,ActionListener{
 		pan3.add(b9);
 		gr3.setHgap(20);
 		gr3.setVgap(20);
-		
+		*/
 
 		//PAN 4  GESTION DES COMPTES  ROUGE
 		MonBouton ajout= new MonBouton("Ajouter un compte");
-		JButton supp= new JButton("Supprimer un compte");
-		JButton modif= new JButton("Modifier un compte");
+		MonBouton supp= new MonBouton("Supprimer un compte");
+		MonBouton modif= new MonBouton("Modifier un compte");
 		GridLayout gr4= new GridLayout(1,1);
 		pan4.setBackground(Color.red);
 		pan4.setLayout(gr4);
@@ -294,7 +295,7 @@ sui.addActionListener(new ActionListener(){
 	});
 
 //   PAN 7    AMEL CODE++++++++++++++++++++++++++++++++++++++++++++++
-pan7.setLayout(new GridLayout(8,2));
+pan7.setLayout(new GridLayout(10,2));
 pan7.add(l1);
 
 for(int i = 0; i<31;i++){
@@ -401,7 +402,7 @@ pan7.add(comb7);
 
 pan7.add(creer);
 pan7.add(modif);
-
+pan7.add(supp);
 
 
 creer.addActionListener((new ActionListener(){

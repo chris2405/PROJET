@@ -53,9 +53,9 @@ public class Fenetre extends JFrame implements MouseListener,ActionListener{
 	JComboBox<String> comb6 =new JComboBox();
 	JComboBox<String> comb7 =new JComboBox();
 	
-	MonBouton creer= new MonBouton("creer");
-	MonBouton modif= new MonBouton("modifier");
-	MonBouton supp= new MonBouton("supprimer");
+	MonBouton creer1= new MonBouton("creer");
+	MonBouton modif2= new MonBouton("modifier");
+	MonBouton supp3= new MonBouton("supprimer");
 	
 	JLabel l1 = new JLabel("jour");
 	JLabel l2 = new JLabel("mois");
@@ -118,7 +118,8 @@ public class Fenetre extends JFrame implements MouseListener,ActionListener{
 		MonBouton b4=new MonBouton("Gestion des Comptes"); 
 		
 		
-		b4.setVisible(false);
+		//b4.setVisible(false);
+		
 		/*
 		MonBouton b5=new MonBouton("Consulter planning General");
 		MonBouton b6=new MonBouton("Consulter le planning Personnel");
@@ -177,14 +178,14 @@ public class Fenetre extends JFrame implements MouseListener,ActionListener{
 
 		//PAN 4  GESTION DES COMPTES  ROUGE
 		MonBouton ajout= new MonBouton("Ajouter un compte");
-		MonBouton supp= new MonBouton("Supprimer un compte");
-		MonBouton modif= new MonBouton("Modifier un compte");
+		MonBouton supp4= new MonBouton("Supprimer un compte");
+		MonBouton modif4= new MonBouton("Modifier un compte");
 		GridLayout gr4= new GridLayout(1,1);
 		pan4.setBackground(Color.red);
 		pan4.setLayout(gr4);
 		pan4.add(ajout);
-		pan4.add(supp);
-		pan4.add(modif);
+		pan4.add(supp4);
+		pan4.add(modif4);
 		gr4.setHgap(20);
 		gr4.setVgap(20);
 
@@ -282,15 +283,15 @@ b3.addActionListener(new ActionListener(){
 
 pre.addActionListener(new ActionListener(){
 	public void actionPerformed(ActionEvent e) {
-		setContentPane(pan7);
-		setVisible(true);
+		//setContentPane(pan7);
+		//setVisible(true);
 		}
 	});
 
 sui.addActionListener(new ActionListener(){
 	public void actionPerformed(ActionEvent e) {
-		setContentPane(pan7);
-		setVisible(true);
+		//setContentPane(pan7);
+		//setVisible(true);
 		}
 	});
 
@@ -400,12 +401,12 @@ catch (SQLException exc) {
 pan7.add(l7);
 pan7.add(comb7);
 
-pan7.add(creer);
-pan7.add(modif);
-pan7.add(supp);
+pan7.add(creer1);
+pan7.add(modif2);
+pan7.add(supp3);
 
 
-creer.addActionListener((new ActionListener(){
+creer1.addActionListener((new ActionListener(){
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
@@ -434,7 +435,7 @@ creer.addActionListener((new ActionListener(){
 		
 	}}));
 
-modif.addActionListener((new ActionListener(){
+modif2.addActionListener((new ActionListener(){
 
 	@Override
 	public void actionPerformed(ActionEvent event) {

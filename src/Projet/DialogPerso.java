@@ -16,7 +16,7 @@ public class DialogPerso extends JDialog{
 	
 	public DialogPerso(){
 
-		//super(owner," test   ",true);
+		
 		setSize(200,100);
 		b= new JButton("test2");
 		text=new JTextField(10);

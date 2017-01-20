@@ -10,17 +10,17 @@ import javax.swing.JFrame;
 
 public class Responsable {
 	
-	//DatePlanning date=new DatePlanning(j, m, a);
+
 	public Responsable(){
 		super();
 	}
 	
 	
 	public static void modifierPlanning (Date a, int b, String c, String d, String e){
-		//new DatePlanning(int j, int m, int a);
 		
 		
-		String query = "UPDATE planning SET (id_salle = ? AND nom_promo = ? AND nom_formateur = ? AND intitule_cours = ?) WHERE date = ?";
+		
+		String query = "UPDATE planning SET id_promo = ? , id_formateur = ? , id_matiere = ? WHERE date = ? AND id_salle = ? ";
 
 
 		try {   
@@ -28,11 +28,11 @@ public class Responsable {
 
 			PreparedStatement prepare = ConnexionBDD.getInstance().prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			
-			prepare.setInt(1,b);
-			prepare.setString(2, c);
-			prepare.setString(3, d);
-			prepare.setString(4, e);
-			prepare.setDate(5,a);
+			prepare.setString(1,c);
+			prepare.setString(2, d);
+			prepare.setString(3, e);
+			prepare.setDate(4, a);
+			prepare.setInt(5,b);
 			prepare.executeUpdate();
 			prepare.close();
 
@@ -45,7 +45,7 @@ public class Responsable {
 	
 	public static void supprimerReservation(Date a, int b){
 		
-		String query = "DELETE * FROM planning WHERE date=? and id_salle=?";
+		String query = "DELETE FROM planning WHERE date=? and id_salle=?";
 		
 		try {   
 
@@ -54,7 +54,7 @@ public class Responsable {
 			
 			prepare.setDate(1,a);
 			prepare.setInt(2,b);
-			ResultSet result = prepare.executeQuery();
+			prepare.execute();
 
 
 		}
@@ -69,7 +69,7 @@ public class Responsable {
 		
 		if(!existPlanning( a, b , c, d)){
 			
-		String query = "INSERT INTO planning (date, id_salle, nom_promo, nom_formateur, intitule_cours) VALUES (?, ?, ?, ?, ?)";
+		String query = "INSERT INTO planning (date, id_salle, id_promo, id_formateur, id_matiere) VALUES (?, ?, ?, ?, ?)";
 			 
 		
 		try {   
@@ -83,7 +83,7 @@ public class Responsable {
 			prepare.setString(4, d);
 			prepare.setString(5,e);
 		
-			prepare.executeQuery();
+			prepare.execute();
 			prepare.close();
 			
 
@@ -128,7 +128,7 @@ public class Responsable {
 			exc.printStackTrace();
 		}
 		
-		String query1 = "SELECT * FROM planning WHERE date = ? AND nom_promo = ?";
+		String query1 = "SELECT * FROM planning WHERE date = ? AND id_promo = ?";
 
 		try {
 			PreparedStatement prepare1 = ConnexionBDD.getInstance().prepareStatement(query1, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -149,7 +149,7 @@ public class Responsable {
 			exc.printStackTrace();
 		}
 		
-		String query2 = "SELECT * FROM planning WHERE date = ? AND nom_formateur = ?";
+		String query2 = "SELECT * FROM planning WHERE date = ? AND id_formateur = ?";
 		
 		try {
 			PreparedStatement prepare2 = ConnexionBDD.getInstance().prepareStatement(query2, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);

@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ConnexionBDD {
 
 	private static Connection connect;
-	public static final String URL_BDD = "jdbc:postgresql://localhost:5432/campus";
+	public static final String URL_BDD = "jdbc:postgresql://localhost:5432/logiciel_gestion_salle";
 	private static String user_bdd = "";
 	private static String pwd_bdd = "";
 	
